@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script src="./lib/umd/single-spa.js"></script>
+<script>
+/* spa 框架方法 */
+/**
+ * registerApplication
+ * 注册，加载应用
+ * @param appName 加载应用的名字
+ * @param loadApp 加载应用的方法 必须是 Promise，必须返回包含生命周期方法的结果
+ * @param activeWhen 判断何时加载应用的方法
+ * @param customProps 自定义参数，用于传值
+ */
+singleSpa.registerApplication(
+  'appName',
+  async () => {
+    return {
+      bootstarp: async () => {},
+      mount: async () => {},
+      unmount: async () => {},
+    }
+  },
+  location => location.hash.startWith('#/app1'),
+  { store: { name: 'yu' } }
+)
+/**
+ * start 方法
+ * 启动已经加载的子应用
+ */
+ singleSpa.start()
+</script>
+</body>
+</html>
