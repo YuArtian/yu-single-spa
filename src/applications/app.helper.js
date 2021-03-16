@@ -1,5 +1,6 @@
 // single-spa 状态
 export const NOT_LOADED = 'NOT_LOADED'
+export const LOAD_ERROR = 'LOAD_ERROR'
 export const LOADING_SOURCE_CODE = 'LOADING_SOURCE_CODE'
 export const NOT_BOOTSTRAPPED = 'NOT_BOOTSTRAPPED'
 export const BOOTSTRAPPING = 'BOOTSTRAPPING'

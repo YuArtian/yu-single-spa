@@ -26,7 +26,7 @@ singleSpa.registerApplication(
       unmount: async () => {},
     }
   },
-  location => location.hash.startWith('#/app1'),
+  location => location.hash && location.hash.startsWith('#/app1'),
   { store: { name: 'yu' } }
 )
 /**
